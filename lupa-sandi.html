@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lupa Password - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <section class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo" style="width: 70px; height: 70px; margin: 0 auto 1rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="8"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="white" stroke-width="1.5" transform="rotate(-20 12 12)"/></svg>
+        </div>
+        <h2>Lupa Password</h2>
+        <p>Masukkan email Anda untuk reset password</p>
+      </div>
+
+      <form id="resetForm">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="reset-email" placeholder="contoh@email.com" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Link Reset</button>
+      </form>
+
+      <div class="login-footer">
+        <p><a href="login.html">← Kembali ke Login</a></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    document.getElementById('resetForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Link reset password telah dikirim ke email Anda!');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>

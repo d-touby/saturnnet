@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login ke akun SaturnNet untuk mengakses portal pelanggan.">
+  <title>Login - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <section class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <div class="logo" style="width: 70px; height: 70px; margin: 0 auto 1rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+            <circle cx="12" cy="12" r="8"/>
+            <ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="white" stroke-width="1.5" transform="rotate(-20 12 12)"/>
+          </svg>
+        </div>
+        <h2>Masuk</h2>
+        <p>Masukkan email dan password untuk mengakses akun Anda</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label">Email atau Username</label>
+          <input type="text" class="form-control" id="email" placeholder="contoh@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Kata Sandi</label>
+          <div class="password-toggle">
+            <input type="password" class="form-control" id="password" placeholder="Masukkan password" required>
+            <span class="toggle-icon" onclick="togglePassword()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="d-flex justify-between align-center mb-3">
+          <label class="checkbox-group" style="margin: 0;">
+            <input type="checkbox"> <span style="font-size: 0.9rem;">Ingat saya</span>
+          </label>
+          <a href="lupa-sandi.html" style="font-size: 0.9rem;">Lupa password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Masuk</button>
+      </form>
+
+      <div class="login-footer">
+        <p>Belum punya akun? <a href="daftar.html">Daftar sekarang</a></p>
+        <a href="admin/login.html" class="admin-link">Login sebagai Admin</a>
+      </div>
+
+      <div class="mt-3 text-center">
+        <p class="text-secondary" style="font-size: 0.8rem;">Demo: pelanggan@saturnnet.id / demo123</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      const result = login(email, password, 'customer');
+      
+      if (result.success) {
+        window.location.href = result.redirect;
+      } else {
+        alert(result.message || 'Login gagal');
+      }
+    });
+  </script>
+</body>
+</html>

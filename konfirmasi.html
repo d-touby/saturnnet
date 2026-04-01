@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Berhasil - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <section class="login-container">
+    <div class="login-card" style="text-align: center; max-width: 550px;">
+      <div class="success-check">
+        <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      
+      <h2 class="mb-2">Pendaftaran Berhasil!</h2>
+      <p class="text-secondary mb-4">Terima kasih telah mendaftar layanan SaturnNet. Berikut detail pendaftaran Anda:</p>
+      
+      <div class="card text-left mb-4">
+        <div class="d-flex justify-between mb-2">
+          <span class="text-secondary">Nomor Tiket:</span>
+          <strong id="ticket-number">TKT-001</strong>
+        </div>
+        <div class="d-flex justify-between mb-2">
+          <span class="text-secondary">Estimasi Instalasi:</span>
+          <strong>3 Hari Kerja</strong>
+        </div>
+        <div class="d-flex justify-between mb-2">
+          <span class="text-secondary">Status:</span>
+          <span class="badge badge-warning">Menunggu Konfirmasi</span>
+        </div>
+      </div>
+
+      <div class="alert alert-info text-left mb-4">
+        <h4>Instruksi Pembayaran</h4>
+        <p class="mb-0">Silakan lakukan pembayaran melalui transfer ke rekening:<br>
+        <strong>BCA 1234567890</strong> (a.n. SaturnNet)<br>
+        Segera lakukan pembayaran dalam 24 jam untuk mempercepat proses aktivasi.</p>
+      </div>
+
+      <div class="d-flex gap-2 justify-center">
+        <a href="login.html" class="btn btn-primary">Login ke Akun Saya</a>
+        <a href="index.html" class="btn btn-secondary">Kembali ke Beranda</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    document.getElementById('ticket-number').textContent = 'REG-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+  </script>
+</body>
+</html>

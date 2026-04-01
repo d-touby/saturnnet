@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Pelanggan - SaturnNet Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="8"/></svg></div>SaturnNet Admin</div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/></svg> Dashboard</a></li>
+      <li><a href="pelanggan.html" class="active"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Pelanggan</a></li>
+      <li><a href="tiket.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg> Tiket & Keluhan</a></li>
+      <li><a href="tagihan.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/></svg> Tagihan</a></li>
+      <li><a href="laporan.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Laporan</a></li>
+      <li><a href="#" onclick="logout()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16,17 21,12 16,7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Keluar</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="main-header">
+      <div><h1>Manajemen Pelanggan</h1><p class="text-secondary">Kelola data pelanggan SaturnNet</p></div>
+      <button class="btn btn-primary" onclick="showModal('addCustomerModal')">+ Tambah Pelanggan</button>
+    </div>
+
+    <div class="d-flex gap-3 mb-4 flex-wrap">
+      <input type="text" class="form-control" style="max-width: 300px;" placeholder="Cari nama atau email...">
+      <select class="form-control" style="max-width: 180px;">
+        <option>Semua Paket</option>
+        <option>Saturn-Home</option>
+        <option>Saturn-Pro</option>
+        <option>Saturn-Elite</option>
+      </select>
+      <select class="form-control" style="max-width: 150px;">
+        <option>Semua Status</option>
+        <option>Aktif</option>
+        <option>Suspended</option>
+      </select>
+    </div>
+
+    <div class="mb-3 text-secondary">Menampilkan 3 dari 500 pelanggan</div>
+
+    <div class="card">
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr><th>ID</th><th>Nama & Email</th><th>Paket</th><th>Tagihan</th><th>Tgl Daftar</th><th>Status</th><th>Aksi</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>USR-001</td>
+              <td><strong>Budi Santoso</strong><br><span class="text-secondary">pelanggan@saturnnet.id</span></td>
+              <td>Saturn-Home Regular</td>
+              <td><span class="badge badge-warning">Belum Bayar</span></td>
+              <td>01 Jan 2025</td>
+              <td><span class="badge badge-success">Aktif</span></td>
+              <td><button class="btn btn-secondary btn-sm" onclick="showModal('detailCustomerModal')">Detail</button></td>
+            </tr>
+            <tr>
+              <td>USR-002</td>
+              <td><strong>Siti Nurhaliza</strong><br><span class="text-secondary">siti@email.com</span></td>
+              <td>Saturn-Pro Game Pro</td>
+              <td><span class="badge badge-success">Lunas</span></td>
+              <td>15 Jan 2025</td>
+              <td><span class="badge badge-success">Aktif</span></td>
+              <td><button class="btn btn-secondary btn-sm">Detail</button></td>
+            </tr>
+            <tr>
+              <td>USR-003</td>
+              <td><strong>Andi Pratama</strong><br><span class="text-secondary">andi@email.com</span></td>
+              <td>Saturn-Home Plus</td>
+              <td><span class="badge badge-success">Lunas</span></td>
+              <td>20 Jan 2025</td>
+              <td><span class="badge badge-success">Aktif</span></td>
+              <td><button class="btn btn-secondary btn-sm">Detail</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pagination mt-4">
+      <button>←</button>
+      <button class="active">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>...</button>
+      <button>50</button>
+      <button>→</button>
+    </div>
+  </main>
+
+  <!-- Detail Customer Modal -->
+  <div class="modal-overlay" id="detailCustomerModal">
+    <div class="modal" style="max-width: 700px;">
+      <div class="modal-header">
+        <h3>Detail Pelanggan - USR-001</h3>
+        <button class="modal-close" onclick="hideModal('detailCustomerModal')">&times;</button>
+      </div>
+      <div class="tabs" style="margin-bottom: 1rem;">
+        <button class="tab active">Profil</button>
+        <button class="tab">Histori Tagihan</button>
+        <button class="tab">Histori Tiket</button>
+      </div>
+      <div>
+        <div class="d-flex justify-between mb-2"><span class="text-secondary">Nama:</span><span>Budi Santoso</span></div>
+        <div class="d-flex justify-between mb-2"><span class="text-secondary">Email:</span><span>pelanggan@saturnnet.id</span></div>
+        <div class="d-flex justify-between mb-2"><span class="text-secondary">HP:</span><span>081234567890</span></div>
+        <div class="d-flex justify-between mb-2"><span class="text-secondary">Alamat:</span><span>Jl. Mawar No. 123</span></div>
+        <div class="d-flex justify-between mb-2"><span class="text-secondary">Paket:</span><span>Saturn-Home Regular</span></div>
+        <div class="d-flex justify-between"><span class="text-secondary">Tgl Daftar:</span><span>01 Jan 2025</span></div>
+      </div>
+      <div class="d-flex gap-2 mt-4">
+        <button class="btn btn-warning btn-sm">Suspend</button>
+        <button class="btn btn-primary btn-sm">Edit</button>
+        <button class="btn btn-secondary btn-sm" onclick="hideModal('detailCustomerModal')">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/main.js" defer></script>
+  <script>if (!requireAuth('admin')) {}</script>
+</body>
+</html>

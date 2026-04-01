@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daftar layanan internet SaturnNet - Cepat, mudah, dan terdaftar.">
+  <title>Daftar - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <section class="login-container" style="padding-top: 60px;">
+    <div class="login-card" style="max-width: 600px;">
+      <div class="login-header">
+        <h2>Daftar Layanan</h2>
+        <p>Isi formulir di bawah untuk memulai layanan internet SaturnNet</p>
+      </div>
+
+      <!-- Stepper -->
+      <div class="stepper mb-4">
+        <div class="step active" data-step="1">
+          <div class="step-number">1</div>
+          <span class="step-label">Paket</span>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-number">2</div>
+          <span class="step-label">Data Diri</span>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-number">3</div>
+          <span class="step-label">Lokasi</span>
+        </div>
+        <div class="step" data-step="4">
+          <div class="step-number">4</div>
+          <span class="step-label">Konfirmasi</span>
+        </div>
+      </div>
+
+      <form id="registerForm">
+        <!-- Step 1: Package -->
+        <div class="form-step active" id="step1">
+          <div class="form-group">
+            <label class="form-label">Pilih Paket</label>
+            <select class="form-control" id="package" required>
+              <option value="">-- Pilih Paket --</option>
+              <option value="Saturn-Home Lite">Saturn-Home Lite (20 Mbps) - Rp 180.000/bln</option>
+              <option value="Saturn-Home Regular">Saturn-Home Regular (50 Mbps) - Rp 280.000/bln</option>
+              <option value="Saturn-Home Plus">Saturn-Home Plus (75 Mbps) - Rp 380.000/bln</option>
+              <option value="Saturn-Pro Game Starter">Saturn-Pro Game Starter (50 Mbps) - Rp 330.000/bln</option>
+              <option value="Saturn-Pro Game Pro">Saturn-Pro Game Pro (100 Mbps) - Rp 490.000/bln</option>
+              <option value="Saturn-Pro Game Ultra">Saturn-Pro Game Ultra (200 Mbps) - Rp 750.000/bln</option>
+              <option value="Saturn-Elite Ded 100M">Saturn-Elite Ded 100M (100 Mbps) - Rp 1.500.000/bln</option>
+              <option value="Saturn-Elite Ded 200M">Saturn-Elite Ded 200M (200 Mbps) - Rp 2.500.000/bln</option>
+              <option value="Saturn-Elite Ded 500M">Saturn-Elite Ded 500M (500 Mbps) - Rp 5.000.000/bln</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="nextStep(2)">Lanjutkan</button>
+        </div>
+
+        <!-- Step 2: Personal Data -->
+        <div class="form-step" id="step2" style="display: none;">
+          <div class="form-group">
+            <label class="form-label">Nama Lengkap</label>
+            <input type="text" class="form-control" id="name" placeholder="Nama sesuai KTP" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">NIK (Nomor KTP)</label>
+            <input type="text" class="form-control" id="nik" placeholder="Nomor KTP" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="email@contoh.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nomor HP</label>
+            <input type="tel" class="form-control" id="phone" placeholder="081234567890" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kata Sandi</label>
+            <input type="password" class="form-control" id="password" placeholder="Minimal 6 karakter" required>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-secondary" onclick="nextStep(1)">Kembali</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Lanjutkan</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Location -->
+        <div class="form-step" id="step3" style="display: none;">
+          <div class="form-group">
+            <label class="form-label">Alamat Lengkap</label>
+            <textarea class="form-control" id="address" rows="2" placeholder="Jl. Nama Jalan No. RT/RW" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kecamatan</label>
+            <input type="text" class="form-control" id="district" placeholder="Kecamatan" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kota/Kabupaten</label>
+            <input type="text" class="form-control" id="city" placeholder="Kota/Kabupaten" required>
+          </div>
+          <div class="d-flex gap-2">
+            <div style="flex: 1;">
+              <label class="form-label">RT</label>
+              <input type="text" class="form-control" id="rt" placeholder="001">
+            </div>
+            <div style="flex: 1;">
+              <label class="form-label">RW</label>
+              <input type="text" class="form-control" id="rw" placeholder="002">
+            </div>
+          </div>
+          <div class="form-group mt-2">
+            <label class="form-label">Keterangan Lokasi</label>
+            <input type="text" class="form-control" id="notes" placeholder="Dekat toko/corner, warna rumah, dll">
+          </div>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-secondary" onclick="nextStep(2)">Kembali</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Lanjutkan</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Confirmation -->
+        <div class="form-step" id="step4" style="display: none;">
+          <div class="card mb-3">
+            <h4 class="mb-2">Ringkasan Pesanan</h4>
+            <p><strong>Paket:</strong> <span id="summary-package"></span></p>
+            <p><strong>Nama:</strong> <span id="summary-name"></span></p>
+            <p><strong>Email:</strong> <span id="summary-email"></span></p>
+            <p><strong>HP:</strong> <span id="summary-phone"></span></p>
+            <p><strong>Alamat:</strong> <span id="summary-address"></span></p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Metode Pembayaran</label>
+            <select class="form-control" id="payment">
+              <option value="transfer">Transfer Bank (BCA)</option>
+              <option value="bni">BNI</option>
+              <option value="mandiri">Mandiri</option>
+              <option value="qris">QRIS</option>
+              <option value="va">Virtual Account</option>
+            </select>
+          </div>
+
+          <label class="checkbox-group">
+            <input type="checkbox" id="promo">
+            <span>Saya ingin mengikuti promo instalasi gratis!</span>
+          </label>
+
+          <label class="checkbox-group">
+            <input type="checkbox" id="terms" required>
+            <span>Saya setuju dengan <a href="syarat.html" target="_blank">Syarat & Ketentuan</a></span>
+          </label>
+
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-secondary" onclick="nextStep(3)">Kembali</button>
+            <button type="submit" class="btn btn-success" style="flex: 1;">Daftar Sekarang</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    // Pre-fill package from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const pkg = urlParams.get('paket');
+    if (pkg) {
+      document.getElementById('package').value = pkg;
+    }
+
+    function nextStep(step) {
+      // Validate current step
+      if (step > 1) {
+        const currentStep = step - 1;
+        const inputs = document.querySelectorAll(`#step${currentStep} [required]`);
+        let valid = true;
+        inputs.forEach(input => {
+          if (!input.value) {
+            input.style.borderColor = 'var(--danger)';
+            valid = false;
+          } else {
+            input.style.borderColor = 'var(--border-color)';
+          }
+        });
+        if (!valid) return;
+      }
+
+      // Hide all steps
+      document.querySelectorAll('.form-step').forEach(s => s.style.display = 'none');
+      // Show current step
+      document.getElementById(`step${step}`).style.display = 'block';
+
+      // Update stepper
+      document.querySelectorAll('.step').forEach((s, i) => {
+        if (i + 1 < step) s.classList.add('completed');
+        else s.classList.remove('completed');
+        if (i + 1 === step) s.classList.add('active');
+        else s.classList.remove('active');
+      });
+
+      // Update summary
+      if (step === 4) {
+        document.getElementById('summary-package').textContent = document.getElementById('package').value;
+        document.getElementById('summary-name').textContent = document.getElementById('name').value;
+        document.getElementById('summary-email').textContent = document.getElementById('email').value;
+        document.getElementById('summary-phone').textContent = document.getElementById('phone').value;
+        document.getElementById('summary-address').textContent = 
+          document.getElementById('address').value + ', RT ' + document.getElementById('rt').value + '/RW ' + document.getElementById('rw').value;
+      }
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const data = {
+        name: document.getElementById('name').value,
+        nik: document.getElementById('nik').value,
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value,
+        phone: document.getElementById('phone').value,
+        address: document.getElementById('address').value,
+        rt: document.getElementById('rt').value,
+        rw: document.getElementById('rw').value,
+        district: document.getElementById('district').value,
+        city: document.getElementById('city').value,
+        package: document.getElementById('package').value
+      };
+
+      const result = registerUser(data);
+      
+      if (result.success) {
+        window.location.href = 'konfirmasi.html';
+      } else {
+        alert(result.message || 'Pendaftaran gagal');
+      }
+    });
+  </script>
+</body>
+</html>

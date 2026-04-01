@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manajemen Tiket - Admin SaturnNet</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../assets/css/main.css">
+  
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">
+        <i data-feather="globe" style="color: white; width: 20px; height: 20px;"></i>
+      </div>
+      SaturnNet
+    </div>
+    
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html"><i data-feather="grid"></i> Dashboard</a></li>
+      <li><a href="pelanggan.html"><i data-feather="users"></i> Pelanggan</a></li>
+      <li><a href="tagihan.html"><i data-feather="file-text"></i> Tagihan</a></li>
+      <li><a href="admin-tiket.html" class="active"><i data-feather="message-square"></i> Tiket Bantuan</a></li>
+      <li><a href="laporan.html"><i data-feather="bar-chart-2"></i> Laporan</a></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    
+    <header class="main-header">
+      <div class="d-flex align-center gap-2">
+        <button class="navbar-toggle show-mobile" onclick="document.querySelector('.sidebar').classList.toggle('active')">
+          <i data-feather="menu"></i>
+        </button>
+        <h1>Tiket Bantuan</h1>
+      </div>
+      
+      <div class="user-info">
+        <div class="text-secondary hide-mobile">Admin TKJ</div>
+        <div class="user-avatar">G</div>
+      </div>
+    </header>
+
+    <div class="dashboard-stats fade-in">
+      <div class="stat-card">
+        <div class="stat-icon primary"><i data-feather="inbox"></i></div>
+        <div class="stat-info">
+          <h4>128</h4>
+          <p>Total Tiket</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon danger"><i data-feather="alert-circle"></i></div>
+        <div class="stat-info">
+          <h4>12</h4>
+          <p>Menunggu Balasan</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon warning"><i data-feather="clock"></i></div>
+        <div class="stat-info">
+          <h4>8</h4>
+          <p>Sedang Diproses</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon success"><i data-feather="check-circle"></i></div>
+        <div class="stat-info">
+          <h4>108</h4>
+          <p>Tiket Selesai</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card fade-in stagger-1">
+      
+      <div class="invoice-toolbar justify-between">
+        <div class="search-box mb-0" style="margin-bottom: 0;">
+          <i data-feather="search"></i>
+          <input type="text" class="form-control" placeholder="Cari ID tiket atau nama..." style="width: 250px;">
+        </div>
+        
+        <div class="d-flex gap-2">
+          <select class="form-control" style="width: auto; padding: 10px 14px;">
+            <option value="all">Semua Status</option>
+            <option value="open">Menunggu</option>
+            <option value="progress">Diproses</option>
+            <option value="resolved">Selesai</option>
+          </select>
+          <button class="btn btn-primary btn-sm"><i data-feather="plus" style="width: 16px; margin-right: 5px;"></i> Buat Tiket</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table class="table invoice-table">
+          <thead>
+            <tr>
+              <th>ID Tiket</th>
+              <th>Pelanggan</th>
+              <th>Subjek / Kendala</th>
+              <th>Prioritas</th>
+              <th>Status</th>
+              <th>Waktu</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="inv-number">#TK-2041</span></td>
+              <td>
+                <div class="inv-customer">
+                  <div class="inv-avatar" style="background: var(--danger);">B</div>
+                  <div>
+                    <div style="font-weight: 600;">Budi Santoso</div>
+                    <div class="inv-paket">Paket Orbit-2</div>
+                  </div>
+                </div>
+              </td>
+              <td>Koneksi LOS merah sejak semalam</td>
+              <td><span class="badge badge-danger">Tinggi</span></td>
+              <td><span class="badge badge-warning">Menunggu</span></td>
+              <td class="text-secondary" style="font-size: 0.85rem;">10 Menit lalu</td>
+              <td>
+                <div class="inv-actions">
+                  <button class="inv-btn inv-btn-paid" onclick="openModal()" title="Balas Tiket">
+                    <i data-feather="corner-up-left" style="width: 16px;"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="inv-number">#TK-2040</span></td>
+              <td>
+                <div class="inv-customer">
+                  <div class="inv-avatar">S</div>
+                  <div>
+                    <div style="font-weight: 600;">Siti Aminah</div>
+                    <div class="inv-paket">Paket Orbit-1</div>
+                  </div>
+                </div>
+              </td>
+              <td>Ganti password router ZTE</td>
+              <td><span class="badge badge-warning">Sedang</span></td>
+              <td><span class="badge badge-primary">Diproses</span></td>
+              <td class="text-secondary" style="font-size: 0.85rem;">1 Jam lalu</td>
+              <td>
+                <div class="inv-actions">
+                  <button class="inv-btn" onclick="openModal()" title="Detail Tiket">
+                    <i data-feather="eye" style="width: 16px;"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><span class="inv-number">#TK-2039</span></td>
+              <td>
+                <div class="inv-customer">
+                  <div class="inv-avatar" style="background: var(--success);">D</div>
+                  <div>
+                    <div style="font-weight: 600;">Dimas Aditya</div>
+                    <div class="inv-paket">Paket Orbit-3</div>
+                  </div>
+                </div>
+              </td>
+              <td>Ping besar saat main game (PUBG)</td>
+              <td><span class="badge badge-secondary">Rendah</span></td>
+              <td><span class="badge badge-success">Selesai</span></td>
+              <td class="text-secondary" style="font-size: 0.85rem;">Kemarin</td>
+              <td>
+                <div class="inv-actions">
+                  <button class="inv-btn" title="Detail Tiket">
+                    <i data-feather="eye" style="width: 16px;"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <button><i data-feather="chevron-left" style="width: 16px;"></i></button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>3</button>
+        <button><i data-feather="chevron-right" style="width: 16px;"></i></button>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="ticketModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Balas Tiket #TK-2041</h3>
+        <button class="modal-close" onclick="closeModal()"><i data-feather="x"></i></button>
+      </div>
+      
+      <div class="invoice-detail-grid mb-3">
+        <div class="invoice-detail-row">
+          <span>Pelanggan</span>
+          <strong>Budi Santoso (Orbit-2)</strong>
+        </div>
+        <div class="invoice-detail-row">
+          <span>Kendala</span>
+          <strong>Koneksi LOS merah sejak semalam</strong>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Tanggapan Teknisi / Admin</label>
+        <textarea class="form-control" rows="4" placeholder="Ketik balasan untuk pelanggan di sini..."></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label">Ubah Status</label>
+        <select class="form-control">
+          <option value="progress">Sedang Diproses (Teruskan ke Teknisi Lapangan)</option>
+          <option value="resolved">Selesai (Masalah Teratasi)</option>
+          <option value="open">Menunggu Info Pelanggan</option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-between mt-4">
+        <button class="btn btn-secondary" onclick="closeModal()">Batal</button>
+        <button class="btn btn-primary" onclick="closeModal()">Kirim Balasan <i data-feather="send" style="width: 16px; margin-left: 8px;"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Render Feather Icons
+    feather.replace();
+
+    // Fungsi Buka Tutup Modal
+    const modal = document.getElementById('ticketModal');
+    
+    function openModal() {
+      modal.classList.add('active');
+    }
+    
+    function closeModal() {
+      modal.classList.remove('active');
+    }
+
+    // Tutup modal kalau user klik di luar kotak modal
+    modal.addEventListener('click', function(e) {
+      if(e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>

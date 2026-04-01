@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paket internet fiber SaturnNet - Tersedia untuk rumah, gaming, dan bisnis dengan harga terjangkau.">
+  <title>Paket Layanan - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%231e6eff'/><circle cx='50' cy='50' r='15' fill='%23d4a574'/></svg>">
+</head>
+<body>
+  <div class="loader"><div class="loader-content"><div class="loader-logo"></div><div class="loader-text">SaturnNet</div></div></div>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand"><div class="logo"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="8"/><ellipse cx="12" cy="12" rx="10" ry="4" fill="none" stroke="white" stroke-width="1.5" transform="rotate(-20 12 12)"/></svg></div>SaturnNet</a>
+      <ul class="navbar-nav">
+        <li><a href="index.html">Beranda</a></li>
+        <li><a href="paket.html" class="active">Paket</a></li>
+        <li><a href="tentang.html">Tentang</a></li>
+        <li><a href="cakupan.html">Cakupan</a></li>
+        <li><a href="kontak.html">Kontak</a></li>
+      </ul>
+      <div class="navbar-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Masuk</a>
+        <a href="daftar.html" class="btn btn-primary btn-sm">Daftar</a>
+        <button class="navbar-toggle">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Paket Layanan</h2>
+        <p>Pilih paket yang sesuai dengan kebutuhan internet Anda</p>
+      </div>
+
+      <!-- Toggle Billing -->
+      <div class="toggle-container" style="justify-content: center; margin-bottom: 2rem;">
+        <span id="bulanan-label" style="font-weight: 600;">Bulanan</span>
+        <div class="toggle billing-toggle" id="billingToggle" onclick="toggleBilling()"></div>
+        <span id="tahunan-label">Tahunan <span class="badge badge-success">Hemat 15%</span></span>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="tabs" style="justify-content: center; margin-bottom: 2rem;">
+        <button class="tab active" data-filter="all" onclick="filterPackages('all', this)">Semua</button>
+        <button class="tab" data-filter="rumahan" onclick="filterPackages('rumahan', this)">Rumah</button>
+        <button class="tab" data-filter="gaming" onclick="filterPackages('gaming', this)">Gaming/Pro</button>
+        <button class="tab" data-filter="korporasi" onclick="filterPackages('korporasi', this)">Korporasi</button>
+      </div>
+
+      <!-- Saturn Home - Rumah -->
+      <div class="package-section mb-5" data-category="rumahan">
+        <h3 class="mb-3">Saturn-Home</h3>
+        <div class="packages-grid">
+          <div class="package-card" data-category="rumahan">
+            <div class="package-name">Lite</div>
+            <div class="package-speed">20 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="180000" data-yearly="1836000">Rp 180.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Browsing & medsos</li>
+              <li>Streaming SD</li>
+              <li>1-3 devices</li>
+              <li>Installasi gratis</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Home Lite" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+          <div class="package-card popular" data-category="rumahan">
+            <div class="package-name">Regular ⭐</div>
+            <div class="package-speed">50 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="280000" data-yearly="2856000">Rp 280.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Streaming HD</li>
+              <li>Video call</li>
+              <li>WFH ringan</li>
+              <li>5-8 devices</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Home Regular" class="btn btn-primary">Pilih Paket</a>
+          </div>
+          <div class="package-card" data-category="rumahan">
+            <div class="package-name">Plus</div>
+            <div class="package-speed">75 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="380000" data-yearly="3876000">Rp 380.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Streaming 4K</li>
+              <li>Smart home</li>
+              <li>10+ devices</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Home Plus" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saturn Pro - Gaming -->
+      <div class="package-section mb-5" data-category="gaming">
+        <h3 class="mb-3">Saturn-Pro</h3>
+        <div class="packages-grid">
+          <div class="package-card" data-category="gaming">
+            <div class="package-name">Game Starter</div>
+            <div class="package-speed">50 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="330000" data-yearly="3366000">Rp 330.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Gaming casual</li>
+              <li>Low latency</li>
+              <li>Optimized routing</li>
+              <li>Priority support</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Pro Game Starter" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+          <div class="package-card popular" data-category="gaming">
+            <div class="package-name">Game Pro ⭐</div>
+            <div class="package-speed">100 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="490000" data-yearly="4998000">Rp 490.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Gaming kompetitif</li>
+              <li>Kreator konten</li>
+              <li>Prioritas traffic</li>
+              <li>Static IP option</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Pro Game Pro" class="btn btn-primary">Pilih Paket</a>
+          </div>
+          <div class="package-card" data-category="gaming">
+            <div class="package-name">Game Ultra</div>
+            <div class="package-speed">200 <span>Mbps</span></div>
+            <div class="package-price" data-monthly="750000" data-yearly="7650000">Rp 750.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Professional streaming</li>
+              <li>Bisnis digital</li>
+              <li>Bandwidth penuh</li>
+              <li>24/7 priority support</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Pro Game Ultra" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Saturn Elite - Korporasi -->
+      <div class="package-section mb-5" data-category="korporasi">
+        <h3 class="mb-3">Saturn-Elite</h3>
+        <div class="packages-grid">
+          <div class="package-card" data-category="korporasi">
+            <div class="package-name">Ded 100M</div>
+            <div class="package-speed">100 <span>Mbps 1:1</span></div>
+            <div class="package-price" data-monthly="1500000" data-yearly="15300000">Rp 1.500.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Dedicated bandwidth</li>
+              <li>IP Publik Statis</li>
+              <li>Korporasi kecil</li>
+              <li>SLA 99%</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Elite Ded 100M" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+          <div class="package-card popular" data-category="korporasi">
+            <div class="package-name">Ded 200M ⭐</div>
+            <div class="package-speed">200 <span>Mbps 1:1</span></div>
+            <div class="package-price" data-monthly="2500000" data-yearly="25500000">Rp 2.500.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Perkantoran</li>
+              <li>SLA 99.5%</li>
+              <li>Full managed</li>
+              <li>Priority install</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Elite Ded 200M" class="btn btn-primary">Pilih Paket</a>
+          </div>
+          <div class="package-card" data-category="korporasi">
+            <div class="package-name">Ded 500M</div>
+            <div class="package-speed">500 <span>Mbps 1:1</span></div>
+            <div class="package-price" data-monthly="5000000" data-yearly="51000000">Rp 5.000.000 <span class="price-period">/bln</span></div>
+            <ul class="package-features">
+              <li>Enterprise</li>
+              <li>Pemerintahan</li>
+              <li>Full managed service</li>
+              <li>Dedicated engineer</li>
+            </ul>
+            <a href="daftar.html?paket=Saturn-Elite Ded 500M" class="btn btn-secondary">Pilih Paket</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add-ons -->
+      <div class="mb-5">
+        <h3 class="mb-3">Layanan Add-On</h3>
+        <div class="d-flex gap-3 flex-wrap">
+          <div class="card" style="flex: 1; min-width: 200px;">
+            <h4>IP Publik Statis</h4>
+            <p class="text-secondary">Rp 50.000/bulan</p>
+          </div>
+          <div class="card" style="flex: 1; min-width: 200px;">
+            <h4>Bandwidth Boost</h4>
+            <p class="text-secondary">Mulai Rp 30.000/sesi</p>
+          </div>
+          <div class="card" style="flex: 1; min-width: 200px;">
+            <h4>Wi-Fi Mesh</h4>
+            <p class="text-secondary">Mulai Rp 500.000 (sekali bayar)</p>
+          </div>
+          <div class="card" style="flex: 1; min-width: 200px;">
+            <h4>Jaringan Internal Kantor</h4>
+            <p class="text-secondary">Penawaran khusus</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-secondary);">
+    <div class="container">
+      <h3 class="mb-3">Perbandingan Fitur</h3>
+      <div class="table-container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fitur</th>
+              <th>Saturn-Home</th>
+              <th>Saturn-Pro</th>
+              <th>Saturn-Elite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Download/Upload</td><td>Sesuai paket</td><td>Sesuai paket</td><td>1:1 Dedicated</td></tr>
+            <tr><td>Fiber Optic</td><td>✓</td><td>✓</td><td>✓</td></tr>
+            <tr><td>24/7 Support</td><td>✓</td><td>Priority</td><td>Dedicated</td></tr>
+            <tr><td>IP Public</td><td>-</td><td>Opsional</td><td>✓</td></tr>
+            <tr><td>SLA</td><td>95%</td><td>99%</td><td>99.5%</td></tr>
+            <tr><td>Static IP</td><td>-</td><td>Opsional</td><td>✓</td></tr>
+            <tr><td>Installasi</td><td>Gratis</td><td>Gratis</td><td>Gratis + Priority</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h3 class="mb-3">FAQ Harga</h3>
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header"><h4>Apakah ada biaya instalasi?</h4><span class="accordion-icon">▼</span></div>
+          <div class="accordion-content"><div class="accordion-body">Tidak, biaya instalasi gratis untuk semua paket! Anda hanya membayar biaya paket bulanan.</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><h4>Berapa deposit yang diperlukan?</h4><span class="accordion-icon">▼</span></div>
+          <div class="accordion-content"><div class="accordion-body">Kami tidak memerlukan deposit. Pembayaran dilakukan di awal bulan layanan.</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><h4>Apakah harga sudah termasuk PPN?</h4><span class="accordion-icon">▼</span></div>
+          <div class="accordion-content"><div class="accordion-body">Harga yang tercantum belum termasuk PPN 11%.</div></div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header"><h4>Bagaimana jika ingin upgrade paket?</h4><span class="accordion-icon">▼</span></div>
+          <div class="accordion-content"><div class="accordion-body">Anda bisa upgrade kapan saja melalui portal pelanggan tanpa biaya upgrade.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section container">
+    <h2>Pertanyaan tentang paket?</h2>
+    <p>Tim kami siap membantu Anda memilih paket yang tepat!</p>
+    <a href="kontak.html" class="btn btn-lg">Hubungi Kami</a>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand"><div class="logo"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="8"/></svg></div>SaturnNet</div><p class="text-secondary">Orbiting Your Connection to the Universe.</p></div>
+        <div><h4>Layanan</h4><ul class="footer-links"><li><a href="paket.html">Paket Rumah</a></li><li><a href="paket.html">Paket Bisnis</a></li><li><a href="promo.html">Promo</a></li></ul></div>
+        <div><h4>Bantuan</h4><ul class="footer-links"><li><a href="faq.html">FAQ</a></li><li><a href="kontak.html">Hubungi Kami</a></li><li><a href="cakupan.html">Cek Cakupan</a></li></ul></div>
+        <div><h4>Kontak</h4><ul class="footer-links"><li>📍 Jl. Sudirman No. 123, Jakarta</li><li>📞 1500-123</li><li>📧 info@saturnnet.id</li></ul></div>
+      </div>
+      <div class="footer-bottom"><p>© 2025 SaturnNet. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <div class="cookie-consent">
+    <div class="cookie-content">
+      <p>Kami menggunakan cookies untuk meningkatkan pengalaman Anda.</p>
+      <div class="cookie-buttons">
+        <button class="btn btn-secondary btn-sm btn-decline">Tolak</button>
+        <button class="btn btn-primary btn-sm btn-accept">Terima</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js" defer></script>
+  <script>
+    // Toggle Billing Period
+    let isYearly = false;
+    function toggleBilling() {
+      isYearly = !isYearly;
+      document.getElementById('billingToggle').classList.toggle('active', isYearly);
+      
+      const prices = document.querySelectorAll('.package-price');
+      prices.forEach(price => {
+        const monthly = parseInt(price.dataset.monthly);
+        const yearly = parseInt(price.dataset.yearly);
+        const period = price.querySelector('.price-period');
+        
+        if (isYearly) {
+          price.innerHTML = 'Rp ' + yearly.toLocaleString('id-ID') + '<span class="price-period">/thn</span>';
+        } else {
+          price.innerHTML = 'Rp ' + monthly.toLocaleString('id-ID') + '<span class="price-period">/bln</span>';
+        }
+      });
+    }
+
+    // Filter Packages
+    function filterPackages(category, btn) {
+      // Update tab active state
+      document.querySelectorAll('.tabs .tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      
+      // Show/hide sections
+      document.querySelectorAll('.package-section').forEach(section => {
+        if (category === 'all') {
+          section.style.display = 'block';
+        } else {
+          section.style.display = section.dataset.category === category ? 'block' : 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

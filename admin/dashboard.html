@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - SaturnNet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="loader-logo"></div>
+      <div class="loader-text">SaturnNet Admin</div>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo"></div>
+      SaturnNet Admin
+    </div>
+    <ul class="sidebar-nav">
+      <li><a href="dashboard.html" class="active">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        Dashboard
+      </a></li>
+      <li><a href="pelanggan.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        Pelanggan
+      </a></li>
+      <li><a href="tagihan.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        Tagihan
+      </a></li>
+      <li><a href="laporan.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9.5" y1="15.5" x2="14.5" y2="10.5"/></svg>
+        Laporan
+      </a></li>
+      <li><a href="tiket.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2H11v4H2v14h20V2zM7 20v-9h10v9"/></svg>
+        Tiket
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="main-header">
+      <div>
+        <h1 data-load="stats">Dashboard Admin</h1>
+        <p class="text-secondary" data-load="stats">Ringkasan aktivitas SaturnNet hari ini</p>
+      </div>
+      <div class="user-info">
+        <span data-user-name>Administrator</span>
+        <div class="user-avatar">A</div>
+      </div>
+    </div>
+
+    <!-- Dashboard Stats -->
+    <div class="dashboard-stats" id="admin-stats">
+      <div class="stat-card">
+        <div class="stat-icon primary">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="stat-info">
+          <h4 id="total-revenue">Rp 0</h4>
+          <p>Total Pendapatan</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon success">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div class="stat-info">
+          <h4 id="total-customers">0</h4>
+          <p>Pelanggan Aktif</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon warning">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2H11v4H2v14h20V2zM7 20v-9h10v9"/></svg>
+        </div>
+        <div class="stat-info">
+          <h4 id="open-tickets">0</h4>
+          <p>Tiket Terbuka</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon danger">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="stat-info">
+          <h4 id="unpaid-invoices">0</h4>
+          <p>Tagihan Belum Bayar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex gap-4 flex-wrap">
+      <!-- Recent Activity -->
+      <div class="card flex-1" style="min-width: 500px;">
+        <h3>Aktivitas Terbaru</h3>
+        <div class="table-container">
+          <table class="table" id="recent-activity">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Pelanggan</th>
+                <th>Tipe</th>
+                <th>Status</th>
+                <th>Tanggal</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Revenue Chart -->
+      <div class="card" style="min-width: 400px;">
+        <h3>Trend Pendapatan</h3>
+        <canvas id="revenue-chart" width="400" height="200"></canvas>
+        <div class="d-flex justify-between mt-3">
+          <small>Bulan ini: <span id="current-month-revenue">Rp 0</span></small>
+          <small>Target: <span>Rp 500jt</span></small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="d-flex gap-3 flex-wrap mt-4">
+      <button class="btn btn-primary btn-lg" onclick="window.location.href='pelanggan.html'">Kelola Pelanggan</button>
+      <button class="btn btn-success btn-lg" onclick="window.location.href='tiket.html'">Lihat Tiket</button>
+      <button class="btn btn-secondary btn-lg" onclick="exportReport()">Export Laporan</button>
+    </div>
+  </main>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Load admin dashboard data
+    document.addEventListener('DOMContentLoaded', function() {
+      loadAdminDashboard();
+    });
+
+    function loadAdminDashboard() {
+      const users = getUsers() || [];
+      const tickets = getTickets() || [];
+      const invoices = getInvoices() || [];
+
+      // Update stats
+      document.getElementById('total-customers').textContent = users.length;
+      document.getElementById('open-tickets').textContent = tickets.filter(t => t.status !== 'Selesai').length;
+      document.getElementById('unpaid-invoices').textContent = invoices.filter(i => i.status === 'Belum Bayar').length;
+      
+      const totalRevenue = invoices.reduce((sum, inv) => inv.status === 'Lunas' ? sum + inv.amount : sum, 0);
+      document.getElementById('total-revenue').textContent = formatCurrency(totalRevenue);
+
+      // Recent activity
+      const recentActivities = [
+        ...tickets.slice(0, 5).map(t => ({id: t.id, user: t.userName, type: 'Tiket', status: t.status, date: t.date})),
+        ...invoices.slice(0, 5).map(i => ({id: i.id, user: users.find(u => u.id === i.userId)?.name || 'N/A', type: 'Tagihan', status: i.status, date: i.dueDate}))
+      ].slice(0, 10);
+
+      const tbody = document.querySelector('#recent-activity tbody');
+      tbody.innerHTML = recentActivities.map(activity => `
+        <tr>
+          <td>${activity.id}</td>
+          <td>${activity.user}</td>
+          <td>${activity.type}</td>
+          <td><span class="badge ${getStatusBadge(activity.status)}">${activity.status}</span></td>
+          <td>${formatDate(activity.date)}</td>
+        </tr>
+      `).join('');
+
+      // Revenue chart
+      drawRevenueChart();
+
+      // Remove data-load attributes
+      document.querySelectorAll('[data-load="stats"]').forEach(el => el.removeAttribute('data-load'));
+    }
+
+    function getStatusBadge(status) {
+      if (status === 'Lunas' || status === 'Selesai') return 'success';
+      if (status === 'Belum Bayar' || status === 'Menunggu') return 'danger';
+      return 'warning';
+    }
+
+    function drawRevenueChart() {
+      const canvas = document.getElementById('revenue-chart');
+      const ctx = canvas.getContext('2d');
+      
+      // Simple bar chart data (demo)
+      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei'];
+      const revenues = [120000000, 180000000, 220000000, 281500000, 300000000];
+      
+      const maxRevenue = Math.max(...revenues);
+      const barWidth = 50;
+      const startX = 30;
+      
+      // Clear canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw grid
+      ctx.strokeStyle = 'rgba(30, 58, 95, 0.3)';
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 5; i++) {
+        ctx.beginPath();
+        ctx.moveTo(30, i * 40);
+        ctx.lineTo(380, i * 40);
+        ctx.stroke();
+      }
+      
+      // Draw bars
+      revenues.forEach((revenue, index) => {
+        const barHeight = (revenue / maxRevenue) * 180;
+        const x = startX + index * 70;
+        
+        // Bar
+        ctx.fillStyle = index === 4 ? '#00c896' : 'rgba(30, 110, 255, 0.8)';
+        ctx.fillRect(x, 200 - barHeight, barWidth, barHeight);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.fillRect(x + 2, 202 - barHeight, barWidth - 4, barHeight - 4);
+        
+        // Value label
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '12px Inter';
+        ctx.textAlign = 'center';
+        ctx.fillText('Rp' + (revenue/1000000).toFixed(0) + 'M', x + barWidth/2, 190 - barHeight);
+      });
+      
+      // Month labels
+      ctx.fillStyle = '#a0b4cc';
+      ctx.font = '11px Inter';
+      ctx.textAlign = 'center';
+      months.forEach((month, index) => {
+        ctx.fillText(month, startX + index * 70 + barWidth/2, 195);
+      });
+    }
+
+    function exportReport() {
+      showNotification('Laporan berhasil diunduh!', 'success');
+      // Simulate export
+    }
+  </script>
+</body>
+</html>
