@@ -323,7 +323,7 @@ function login(email, password, type = 'customer') {
         name: 'Administrator',
         email: email
       }, 'admin');
-      return { success: true, redirect: '../admin/dashboard.html' };
+      return { success: true, redirect: 'dashboard.html' };
     }
   } else {
     const users = JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEYS.USERS) || '[]');
